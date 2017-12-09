@@ -8,7 +8,7 @@ const manifest = {
         port: 8000,
         routes: {
             files: {
-                relativeTo: Path.join(__dirname, 'lib')
+                relativeTo: Path.join(__dirname, 'lib/ui/build')
             }
         }
     },
@@ -17,16 +17,10 @@ const manifest = {
             'inert',
             'vision',
             {
-                plugin: require('./lib/ui'),
-                routes: {
-                    prefix: '/ui'
-                }
+                plugin: require('./lib/ui')
             },
             {
-                plugin: require('./lib/api'),
-                routes: {
-                    prefix: '/api'
-                }
+                plugin: require('./lib/api')
             }
         ]
     }
